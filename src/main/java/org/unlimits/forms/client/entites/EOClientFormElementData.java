@@ -2,8 +2,8 @@ package org.unlimits.forms.client.entites;
 
 import java.io.Serializable;
 
-import org.unlimits.forms.global.entites.FormElement;
-import org.unlimits.forms.global.entites.FormElementOption;
+import org.unlimits.forms.global.entities.EOFormElement;
+import org.unlimits.forms.global.entities.EOFormElementOption;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -33,11 +33,11 @@ public class EOClientFormElementData implements Serializable {
 
 	@JoinColumn(name = "FORM_ELEMENT_ID", nullable = false)
 	@ManyToOne
-	private FormElement formElement;
+	private EOFormElement formElement;
 
 	@JoinColumn(name = "FORM_ELEMENT_OPTION_ID")
 	@ManyToOne
-	private FormElementOption option;
+	private EOFormElementOption option;
 
 	@JoinColumn(name = "CLIENT_FORM_MASTER_ID", nullable = false)
 	@ManyToOne
@@ -59,19 +59,19 @@ public class EOClientFormElementData implements Serializable {
 		this.formElementValue = formElementValue;
 	}
 
-	public FormElement getFormElement() {
+	public EOFormElement getFormElement() {
 		return formElement;
 	}
 
-	public void setFormElement(FormElement formElement) {
+	public void setFormElement(EOFormElement formElement) {
 		this.formElement = formElement;
 	}
 
-	public FormElementOption getOption() {
+	public EOFormElementOption getOption() {
 		return option;
 	}
 
-	public void setOption(FormElementOption option) {
+	public void setOption(EOFormElementOption option) {
 		this.option = option;
 	}
 

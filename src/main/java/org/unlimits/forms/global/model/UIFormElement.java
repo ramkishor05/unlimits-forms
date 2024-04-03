@@ -1,102 +1,47 @@
-package org.unlimits.forms.global.entites;
+package org.unlimits.forms.global.model;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
-
-@Entity
-@Table(name = "FORM_ELEMENT")
-public class FormElement implements Serializable {
+public class UIFormElement extends UIGlobalItem{
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "ID")
-	private Long id;
-
-	@Column(name = "DEFAULT_VALUE")
 	private String defaultValue;
 
-	@Column(name = "NAME")
-	private String name;
-	
-	@Column(name = "TYPE")
 	private String type;
 
-	@Column(name = "TITLE")
 	private String title;
 
-	@Column(name = "AUTO_FOCUS")
 	private String autofocus;
 
-	@Column(name = "EMPTY_VALUE")
 	private String emptyValue;
 
-	@Column(name = "PLACE_HOLDER")
 	private String placeholder;
 
-	@Column(name = "AUTOCOMPLETE")
 	private String autocomplete;
 
-	@Column(name = "DESCRIPTION")
 	private String description;
 
-	@Column(name = "WIDGET")
 	private String widget;
 
-	@Column(name = "HELP")
 	private String help;
 
-	@Column(name = "MIN_LENGTH")
 	private String minLength;
 	
-	@Column(name = "REQUIRED")
 	private boolean required;
 
-	@OneToMany(mappedBy = "formElement", cascade = CascadeType.ALL)
-	private List<FormElementOption> options;
-
-	@ManyToOne
-	@JoinColumn(name = "FORM_MASTER_ID",  referencedColumnName = "ID")
-	private FormMaster formMaster;
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
+	private List<UIFormElementOption> options;
+	
 	public String getDefaultValue() {
 		return defaultValue;
 	}
 
 	public void setDefaultValue(String defaultValue) {
 		this.defaultValue = defaultValue;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
 	}
 
 	public String getType() {
@@ -187,26 +132,18 @@ public class FormElement implements Serializable {
 		this.required = required;
 	}
 
-	public List<FormElementOption> getOptions() {
+	public List<UIFormElementOption> getOptions() {
 		if(options==null) {
-			options=new ArrayList<FormElementOption>();
+			options=new ArrayList<UIFormElementOption>();
 		}
 		return options;
 	}
 
-	public void setOptions(List<FormElementOption> options) {
+	public void setOptions(List<UIFormElementOption> options) {
 		this.options = options;
 	}
 
-	public FormMaster getFormMaster() {
-		return formMaster;
-	}
-
-	public void setFormMaster(FormMaster formMaster) {
-		this.formMaster = formMaster;
-	}
-
-	public FormElementOption findOptionByName(String valueOption) {
+	public UIFormElementOption findOptionByName(String valueOption) {
 		return getOptions().stream().filter(option->option.getName().equals(valueOption)).findFirst().orElse(null);
 	}
 

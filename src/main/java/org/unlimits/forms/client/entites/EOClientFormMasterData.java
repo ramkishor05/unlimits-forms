@@ -6,8 +6,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.unlimits.forms.global.entites.FormMaster;
-
+import org.unlimits.forms.global.entities.EOFormModel;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -41,17 +40,13 @@ public class EOClientFormMasterData implements Serializable {
 
 	@JoinColumn(name = "FORM_MASTER_ID", nullable = false)
 	@ManyToOne
-	private FormMaster formMaster;
+	private EOFormModel formMaster;
 
 
 	@OneToMany(mappedBy = "clientFormMasterData")
 	private List<EOClientFormElementData> clientElementDataList;
 
 	public EOClientFormMasterData() {
-	}
-
-	public EOClientFormMasterData(Long clientId, Long formId) {
-		this.formMaster = new FormMaster(formId);
 	}
 
 	public Long getId() {
@@ -62,11 +57,11 @@ public class EOClientFormMasterData implements Serializable {
 		this.id = id;
 	}
 
-	public FormMaster getFormMaster() {
+	public EOFormModel getFormMaster() {
 		return formMaster;
 	}
 
-	public void setFormMaster(FormMaster formMaster) {
+	public void setFormMaster(EOFormModel formMaster) {
 		this.formMaster = formMaster;
 	}
 

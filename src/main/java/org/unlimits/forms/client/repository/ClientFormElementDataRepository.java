@@ -11,7 +11,4 @@ import org.unlimits.forms.client.entites.EOClientFormElementData;
 @Transactional
 public interface ClientFormElementDataRepository extends JpaRepository<EOClientFormElementData, Long> {
 
-	List<EOClientFormElementData> findAllByClientFormMasterDataId(Long clientFormMasterDataId);
-
-	List<EOClientFormElementData> findByFormElementIdAndClientFormMasterDataId(Long key, Long id);
 }

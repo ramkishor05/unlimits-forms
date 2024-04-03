@@ -1,0 +1,19 @@
+{
+	"id": "Global_Portal_FormElement",
+	"orderSequence": 2,
+	"objects": [
+		{
+			"id": "Global_Portal_FormElement_Work_Career_Business",
+			"type": "org.unlimits.forms.global.entities.EOFormElement",
+			"name": "Global_Portal_FormElement",
+			"properties": {
+				"idenNo": "Global_Portal_FormElement_Work_Career_Business",
+				"name": "my career business",
+				"typeId": "my career business",
+				"logoUrl": "",
+				"orderSequence": 1.0,
+				"formModel": "LK@Global_Portal_FormModel_Work"
+			}
+		}
+	]
+}

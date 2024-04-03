@@ -1,0 +1,20 @@
+{
+	"id": "Global_Portal_PageTable",
+	"orderSequence": 2,
+	"objects": [
+		{
+			"id": "Global_Portal_PageTable_Work_Career",
+			"type": "org.unlimits.forms.global.entities.EOPageTable",
+			"name": "Global_Portal_PageTable",
+			"properties": {
+				"name": "Career",
+				"idenNo": "Global_Portal_PageTable_Work_Career",
+				"typeId": "Career",
+				"logoUrl": "",
+				"pageMaster": "LK@Global_Portal_PageMaster_Work",
+				"formModel": "LK@Global_Portal_FormModel_Work",
+				"orderSequence": 1.1
+			}
+		}
+	]
+}

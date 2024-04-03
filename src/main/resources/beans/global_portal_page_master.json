@@ -1,0 +1,19 @@
+{
+	"id": "Global_Portal_PageMaster",
+	"orderSequence": 2,
+	"objects": [
+		{
+			"id": "Global_Portal_Page_Master_Work",
+			"type": "org.unlimits.forms.global.entities.EOPageMaster",
+			"name": "Global_Portal_PageMaster",
+			"properties": {
+				"name": "Work",
+				"idenNo": "Global_Portal_PageMaster_Work",
+				"typeId": "Work",
+				"logoUrl": "",
+				"pageUrl": "",
+				"orderSequence": 1.0
+			}
+		}
+	]
+}
