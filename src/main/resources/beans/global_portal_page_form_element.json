@@ -12,7 +12,8 @@
 				"typeId": "my career business",
 				"logoUrl": "",
 				"orderSequence": 1.0,
-				"formModel": "LK@Global_Portal_FormModel_Work"
+				"formModel": "LK@Global_Portal_FormModel_Work",
+				"render" : "(value, row, header, props)=>{return value}"
 			}
 		}
 	]
