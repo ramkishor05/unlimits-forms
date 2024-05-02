@@ -1,27 +1,15 @@
 package org.unlimits.forms.global.model;
 
-import org.unlimits.forms.model.UIEntityObject;
-
-public class UIPageTableHeader extends UIEntityObject {
+public class UIPageTableHeader extends UIGlobalItem {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private String name;
-
 	private String label;
 
 	private String type;
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
 
 	public String getLabel() {
 		return label;

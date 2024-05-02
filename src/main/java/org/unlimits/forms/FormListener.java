@@ -13,10 +13,12 @@ import org.unlimits.forms.global.entities.EOFormElementOption;
 import org.unlimits.forms.global.entities.EOFormModel;
 import org.unlimits.forms.global.entities.EOPageMaster;
 import org.unlimits.forms.global.entities.EOPageTable;
+import org.unlimits.forms.global.entities.EOPageTableHeader;
 import org.unlimits.forms.global.repository.FormElementOptionRepository;
 import org.unlimits.forms.global.repository.FormElementRepository;
 import org.unlimits.forms.global.repository.FormModelRepository;
 import org.unlimits.forms.global.repository.PageMasterRepository;
+import org.unlimits.forms.global.repository.PageTableHeaderRepository;
 import org.unlimits.forms.global.repository.PageTableRepository;
 
 @Component
@@ -36,6 +38,9 @@ public class FormListener implements ApplicationListener<ContextRefreshedEvent> 
 	
 	@Autowired
 	private PageTableRepository pageTableRepository;
+	
+	@Autowired
+	private PageTableHeaderRepository pageTableHeaderRepository;
 
 	@Value("${spring.db.datajson.upload}")
 	boolean upload;
@@ -85,6 +90,12 @@ public class FormListener implements ApplicationListener<ContextRefreshedEvent> 
 				eoPageTable.setId(eoPageTableSave.getId());
 			});
 
+			List<EOPageTableHeader> eoPageTableHeaderJson = instance.getAll(EOPageTableHeader.class);
+
+			eoPageTableHeaderJson.forEach(eoPageTableHeader -> {
+				EOPageTableHeader eoPageTableHeaderSave = pageTableHeaderRepository.saveAndFlush(eoPageTableHeader);
+				eoPageTableHeader.setId(eoPageTableHeaderSave.getId());
+			});
 		}
 	}
 }

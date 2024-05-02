@@ -1,0 +1,20 @@
+{
+	"id": "Global_Portal_PageTableHeader",
+	"orderSequence": 2,
+	"objects": [
+		{
+			"id": "Global_Portal_PageTableHeader_Work_Career_Business",
+			"type": "org.unlimits.forms.global.entities.EOPageTableHeader",
+			"name": "Global_Portal_PageTableHeader",
+			"properties": {
+				"idenNo": "Global_Portal_PageTableHeader_Work_Career_Business",
+				"name": "my career business",
+				"typeId": "my career business",
+				"logoUrl": "",
+				"orderSequence": 1.0,
+				"pageTable": "LK@Global_Portal_PageTable_Work_Career",
+				"render": "(value, row, header, props)=>{return value}"
+			}
+		}
+	]
+}

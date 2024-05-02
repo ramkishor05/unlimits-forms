@@ -55,6 +55,9 @@ public class EOFormElement extends EOGlobalItem{
 	
 	@Column(name = "REQUIRED")
 	private boolean required;
+	
+	@Column(name = "RENDER")
+	private String render;
 
 	@ManyToOne
 	@JoinColumn(name = "FORM_MODEL_ID")
