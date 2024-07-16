@@ -1,13 +1,14 @@
 package org.unlimits.forms.client.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import org.unlimits.forms.client.entites.EOClientFormMasterData;
+import org.unlimits.rest.repository.CustomRepository;
 
 @Repository
 @Transactional
-public interface ClientFormMasterDataRepository extends JpaRepository<EOClientFormMasterData, Long>{
+public interface ClientFormMasterDataRepository extends CustomRepository<EOClientFormMasterData, Long>{
 
 
 }
+
